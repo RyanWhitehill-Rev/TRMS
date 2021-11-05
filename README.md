@@ -1,2 +1,2 @@
 # TRMS
-Holds the 'Tuition Reimbursement Management System' project
+The 'Tuition Reimbursement Management System' project
