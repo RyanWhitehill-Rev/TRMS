@@ -1,0 +1,61 @@
+#login_div{
+    border: 1px solid black;
+    background-color: lightgray;
+    text-align: center;
+}
+
+#active_user_div{
+    border: 1px solid black;
+    background-color: lightgray;
+    display: none;
+}
+
+#flex_div{
+    display:flex;
+    width: 100%;
+}
+
+#submitted_requests_div{
+    border: 1px solid black;
+    background-color: lightslategray;
+    display: none;
+    width: 50%;
+    margin: 0;
+    text-align: center;
+}
+
+#attention_requests_div{
+    border: 1px solid black;
+    background-color: lightslategray;
+    display: none;
+    width: 50%;
+    margin: 0;
+    text-align: center;
+}
+
+#new_request_div{
+    border: 1px solid black;
+    background-color: lightblue;
+    display: none;
+}
+
+#new_attachment_div{
+    border: 1px solid black;
+    background-color: lightgray;
+    display: none;
+}
+
+#request_focus_div{
+    border: 1px solid black;
+    background-color: lightskyblue;
+    display: none;
+}
+
+.single_request_div{
+    border: 1px solid black;
+    display: block;
+}
+
+.single_request_element{
+    margin: 0px;
+}

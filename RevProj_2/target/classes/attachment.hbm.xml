@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.Attachment" table="attachments">
+
+        <id name="id" type="int" column="a_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="requestId" type="int" column="request_id"/>
+        <property name="supplierId" type="int" column="supply_user_id"/>
+        <property name="demanderId" type="int" column="demand_user_id"/>
+        <property name="satisfied" type="boolean" column="satisfied"/>
+        <property name="filepath" type="string" column="filepath" />
+        <property name="addedText" type="string" column="added_text"/>
+
+    </class>
+
+
+</hibernate-mapping>

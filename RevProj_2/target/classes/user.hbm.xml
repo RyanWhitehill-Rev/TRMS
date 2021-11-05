@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.User" table="users">
+
+        <!-- name and type are based on the java code, column is the related database name -->
+        <!-- This one is also the primary key -->
+        <id name="id" type="int" column="u_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="firstname" type="string" column="firstname" not-null="true" />
+        <property name="lastname" type="string" column="lastname" not-null="true" />
+
+        <property name="supervisorId" type="int" column="supervisor_id"/>
+        <property name="departmentId" type="int" column="department_id"/>
+
+        <property name="BenCo" type="boolean" column="is_benco"/>
+
+        <property name="username" type="string" column="username" not-null="true" unique="true"/>
+        <property name="password" type="string" column="password" not-null="true" />
+
+
+    </class>
+
+
+</hibernate-mapping>

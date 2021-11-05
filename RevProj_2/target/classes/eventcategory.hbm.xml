@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.EventCategory" table="event_categories">
+
+        <id name="id" type="int" column="ec_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="category" type="string" column="category" />
+
+        <property name="reimbursementValue" type="int" column="reimbursement_value"/>
+
+
+    </class>
+
+
+</hibernate-mapping>

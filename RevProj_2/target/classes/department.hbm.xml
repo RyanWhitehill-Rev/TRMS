@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.Department" table="departments">
+
+        <!-- name and type are based on the java code, column is the related database name -->
+        <!-- This one is also the primary key -->
+        <id name="id" type="int" column="d_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="name" type="string" column="name" />
+
+        <property name="deptHeadId" type="int" column="dept_head_id"/>
+
+
+    </class>
+
+
+</hibernate-mapping>

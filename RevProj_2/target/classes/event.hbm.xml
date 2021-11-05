@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.Event" table="events">
+
+        <id name="id" type="int" column="e_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="eventTypeId" type="int" column="event_type" />
+        <property name="eventTime" type="long" column="event_time"/>
+        <property name="eventCost" type="big_decimal" column="event_cost" />
+        <property name="eventLocation" type="string" column="event_location"/>
+        <property name="description" type="string" column="description"/>
+        <property name="justification" type="string" column="justification"/>
+
+    </class>
+
+
+</hibernate-mapping>
+

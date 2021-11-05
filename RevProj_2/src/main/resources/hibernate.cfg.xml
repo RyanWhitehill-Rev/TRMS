@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- This is the hibernate config file -->
+
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">
+            org.postgresql.Driver
+        </property>
+
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.PostgreSQL10Dialect
+        </property>
+
+        <property name="hibernate.connection.url">
+
+        </property>
+
+
+        <property name="hibernate.connection.username">
+
+        </property>
+
+
+        <property name="hibernate.connection.password">
+
+        </property>
+
+
+        <!-- Optional Properties -->
+
+        <!-- Print the used sql statements to the console -->
+        <property name="show_sql">
+            true
+        </property>
+
+        <!-- Mapping to data definition language - automatically.
+            validate: Confirms that the mapping is correct-->
+        <property name="hbm2ddl.auto">
+            validate
+        </property>
+
+        <!-- Class mappings though XML: Link to the individual xml files for each model -->
+        <mapping resource="user.hbm.xml"/>
+        <mapping resource="request.hbm.xml"/>
+        <mapping resource="department.hbm.xml"/>
+        <mapping resource="attachment.hbm.xml"/>
+        <mapping resource="event.hbm.xml"/>
+        <mapping resource="eventcategory.hbm.xml"/>
+        <mapping resource="gradetype.hbm.xml"/>
+        <mapping resource="requeststate.hbm.xml"/>
+
+
+    </session-factory>
+</hibernate-configuration>

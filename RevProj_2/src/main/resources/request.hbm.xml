@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.Request" table="requests">
+
+        <!-- name and type are based on the java code, column is the related database name -->
+        <!-- This one is also the primary key -->
+        <id name="id" type="int" column="r_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="requestState" type="int" column="request_state"/>
+        <property name="requesterId" type="int" column="requester_id"/>
+        <property name="eventId" type="int" column="event_id"/>
+        <property name="gradingId" type="int" column="grading_id"/>
+        <property name="rmbValue" type="big_decimal" column="rmb_value" />
+        <property name="requestTime" type="long" column="request_time"/>
+        <property name="supervisorDeadline" type="long" column="supervisor_deadline"/>
+        <property name="deptHeadDeadline" type="long" column="dept_head_deadline"/>
+
+    </class>
+
+
+</hibernate-mapping>

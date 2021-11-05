@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tuition Reimbursement Management System </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+    <div id=login_div>
+        <h3> Tuition Reimbursement Management System </h3>
+        <h3> Log In: </h3>
+        <label for="login_username"> Username: </label>
+        <input type="text" name="login_username" id="login_username" value=""> <br>
+        <label for="login_password"> Password: </label>
+        <input type="password" name="login_password" id="login_password" value=""> <br>
+        <button onclick="logInUser()" id="log_in_button"> Log In</button> <p id="badLoginNote" style="color:red"></p>
+
+    </div>
+
+    
+    <div id="active_user_div">
+        <h3 id="welcome_header">  </h3>
+        <button onclick="logOutUser()"> Log Out </button>
+
+        <button onclick="displayNewRequestForm()" id="new_request_button"> Make a New Reimbursement Request </button>
+    </div>
+
+    <div id="flex_div">
+        <div id="submitted_requests_div">
+            <h3> Requests listed here </h3>
+            <div class="request_div">
+                <p> Request ID </p>
+                <p> Request State </p>
+                <p> Event info </p>
+                <button onclick="alert('View more info')"> View event info </button>
+                <p> Reimbursement value </p>
+            </div>
+        </div>
+        
+        <div id="attention_requests_div">
+            <h3> Requests that need your attention are listed here </h3>
+            <div class="request_div"> You need to do ...
+                <button onclick="alert('Attach Info')"> Attach Info to this Request </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="new_request_div"> 
+        <h3> New request </h3>
+
+        <label for="request_date"> Event Date: </label> <br>
+        <input type="date" name="request_date" id="request_date"></imput> <br>
+        <label for="request_time"> Event Time: </label> <br>
+        <input type="time" name="request_time" id="request_time"></imput> <br>
+        <label for="request_location"> Event Location: </label> <br>
+        <input type="text" name="request_location" id="request_location"></input> <br>
+        <label for="request_cost"> Cost of Event: </label> <br>
+        <input type="number" name="request_cost" id="request_cost" min="0" onchange="editProjectedRMB()"></input> <br>
+        <label for="request_description"> Description of Event: </label> <br>
+        <textarea name="request_description" id="request_description" rows="5" cols="70"></textarea> <br>
+        <label for="request_justification"> Justification for Event: </label> <br>
+        <textarea name="request_justification" id="request_justification" rows="5" cols="70"></textarea> <br>
+
+        <h5> Grading Format </h5>
+        <div id="grade_radio_div">
+            <input type="radio" name="grade_format_radio" id="grade_radio_1" value="1">
+            <label for="grade_radio_1">Type 1</label><br>
+            <input type="radio" name="grade_format_radio" id="grade_radio_2" value="2">
+            <label for="grade_radio_2">Type 2</label><br>
+            <input type="radio" name="grade_format_radio" id="grade_radio_3" value="3">
+            <label for="grade_radio_3">Type 3</label><br>
+        </div><br>
+
+        <h5> Event Type </h5>
+        <input type="radio" name="event_type_radio" id="event_radio_1" value="1" onchange="editProjectedRMB()">
+        <label for="event_radio_1"> University Course </label><br>
+        <input type="radio" name="event_type_radio" id="event_radio_2" value="2" onchange="editProjectedRMB()">
+        <label for="event_radio_2"> Seminar </label><br>
+        <input type="radio" name="event_type_radio" id="event_radio_3" value="3" onchange="editProjectedRMB()">
+        <label for="event_radio_3"> Certification Preparation Classes </label><br>
+        <input type="radio" name="event_type_radio" id="event_radio_4" value="4" onchange="editProjectedRMB()">
+        <label for="event_radio_4"> Certification </label><br>
+        <input type="radio" name="event_type_radio" id="event_radio_5" value="5" onchange="editProjectedRMB()">
+        <label for="event_radio_5"> Technical Training </label><br>
+        <input type="radio" name="event_type_radio" id="event_radio_6" value="6" onchange="editProjectedRMB()">
+        <label for="event_radio_6">Other</label><br>
+        <br>
+
+        <h4 > Projected Reimbursement: <span id="proj_reimb_field"> - </span> </h4><br>
+        <h4 > Remaining Yearly Reimbursement: <span id="max_reimb_field"> ??? </span> </h4><br>
+
+        <!--
+        <div id="file_upload_area">
+            <div class="single_upload_div">
+                <label for="file_input_1">Upload relevant file:</label> <br>
+                <input type="file" id="file_input_1" accept=".pdf, .png, .jpeg, .txt, .doc">
+                <br>
+                <label for="file_descript_1">File Description / Additional Information:</label> <br>
+                <textarea name="file_descript_1" id="file_descript_1" rows="5" cols="70"></textarea> <br>
+            </div>
+            <button onclick="addNewDocUploadDiv()" id="new_upload_div_button"> Attach another file </button>
+        </div>
+
+        <div id="email_upload_area">
+            <h4> Attach pre-approval emails (if applicable): </h4>
+            <div id="supervisor_email_upload">
+                <label for="s_email_upload">Upload supervisor approval email:</label> <br>
+                <input type="file" id="email_input_super" name="s_email_upload" accept=".msg">
+                <br>
+            </div>
+            <div id="dept_head_email_upload">
+                <label for="dh_email_upload">Upload department head approval email:</label> <br>
+                <input type="file" id="email_input_depthead" name="dh_email_upload" accept=".msg">
+                <br>
+            </div>
+        </div>
+        -->
+        <p id="badSubmitNote" style="color:red"></p>
+        <button onclick="submitNewRequest()" > Submit Request </button>
+        <button onclick="cancelRequest()" > Cancel Request </button>
+    </div>
+
+
+    <div id="request_focus_div">
+        AAAAA
+        <div id="focus_button_div">
+                AAAAA
+
+        </div>
+    </div>
+
+    <div id="new_attachment_div">
+        <label for="file_add_input_1">Upload relevant file:</label>
+        <input type="file" id="file_add_input_1" name="file_1" accept=".pdf, .png, .jpeg, .txt, .doc, .msg">
+        <br>
+        <label for="file_add_descript_1">File Description / Additional Information:</label> <br>
+        <textarea name="file_add_descript_1" id="file_add_descript_1" rows="5" cols="70"></textarea> <br>
+        <br>
+        <button id="attachment_submit_button"> Send Attachment </button>
+    </div>
+
+
+
+    <script src="thescript.js"></script>
+</body>
+</html>

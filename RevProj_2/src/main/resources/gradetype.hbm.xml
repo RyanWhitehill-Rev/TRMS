@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+    <class name="com.revature.models.GradeType" table="grade_types">
+
+        <id name="id" type="int" column="gt_id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="passType" type="string" column="pass_type" />
+        <property name="passingGrade" type="string" column="passing_grade" />
+        <property name="presentationRequired" type="boolean" column="presentation_required"/>
+
+
+    </class>
+
+
+</hibernate-mapping>
+
