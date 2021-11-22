@@ -9,7 +9,7 @@ This is a web application built to create and track reimbursement requests withi
 
 Front end:
   Written in Javascript, HTML, CSS <br />
-  +Bootstrap <br />
+  Bootstrap <br />
   
   Tested with Cucumber, via Selenium <br />
 
@@ -24,16 +24,16 @@ Data stored and accessed via PostgreSQL, in an AWS database
 
 # Features
 
-Existing users may sign in, then make use of the following functionality:
-  View their existing reimbursement requests
-  Create new requests for various course criteria
-  Track their requests through the approval process
-  Attach additional information to their requests (as desired by other users in the approval process)
-  Attach some form of proof of a grade or presentation for the request to be granted
+Existing users may sign in, then make use of the following functionality: <br />
+  View their existing reimbursement requests <br />
+  Create new requests for various course criteria <br />
+  Track their requests through the approval process <br />
+  Attach additional information to their requests (as desired by other users in the approval process) <br />
+  Attach some form of proof of a grade or presentation for the request to be granted <br />
 
-Action of other users is necissary for a reimbursement request to move through the approval process
-  Approval of a supervisor, a department head, and a benefits coordiantor are all required
-  Each of these users can ask for additional information from the request submitter, as well as those who have previously approved the request
+Action of other users is necissary for a reimbursement request to move through the approval process <br />
+  Approval of a supervisor, a department head, and a benefits coordiantor are all required <br />
+  Each of these users can ask for additional information from the request submitter, as well as those who have previously approved the request <br />
 
 # Getting Started
 
