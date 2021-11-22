@@ -8,17 +8,17 @@ This is a web application built to create and track reimbursement requests withi
 # Technologies Used
 
 Front end:
-  Written in Javascript, HTML, CSS 
-  +Bootstrap
+  Written in Javascript, HTML, CSS <br />
+  +Bootstrap <br />
   
-  Tested with Cucumber, via Selenium
+  Tested with Cucumber, via Selenium <br />
 
 Backend:
-  Written in Java
-  Javalin
-  Hibernate
+  Written in Java <br />
+  Javalin <br />
+  Hibernate <br />
   
-  Tested via JUnit and Postman
+  Tested via JUnit and Postman <br />
   
 Data stored and accessed via PostgreSQL, in an AWS database
 
